@@ -5,14 +5,15 @@
   "main": "app.js",
   "scripts": {
     "build": "npm install",
-    "test": "mocha --exit",
+    "test": "mocha --exit tests/**/*.js --reporter mocha-junit-reporter --reporter-options mochaFile=./TEST-RESULTS.xml",
     "start": "node app.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "*",
-    "express-handlebars": "3.0.0"
+    "express-handlebars": "3.0.0",
+    "mocha-junit-reporter": "^2.0.0"
   },
   "devDependencies": {
     "mocha": "5.2.0",
