@@ -24,6 +24,11 @@ steps:
     rootFolderOrFile: '$(System.DefaultWorkingDirectory)'
     includeRootFolder: false
 
+- task: PublishTestResults@2
+  inputs:
+    testResultsFormat: 'JUnit'
+    testResultsFiles: '**/TEST-*.xml'
+
 - task: PublishBuildArtifacts@1
   displayName: 'Publish artifacts: drop'
   
